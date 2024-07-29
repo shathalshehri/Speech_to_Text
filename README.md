@@ -46,6 +46,11 @@ Ensure your database is set up with a table named `speech_to_text_data` to store
 
 - **Voice Command "open"**: Converts to text, processed, and stored as `1` in the database.
 - **Voice Command "close"**: Converts to text, processed, and stored as `0` in the database.
+## Project Demo
+
+To see the project in action, watch the demo video linked below:
+
+- **[Project Demo](https://github.com/shathalshehri/Speech_to_Text/blob/main/ezgif.com-video-to-mp4-converter.mp4)**
 
 ## Troubleshooting
 
