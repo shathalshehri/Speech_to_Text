@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project demonstrates a user interface for converting speech to text and saving the resulting text to a database. The system uses voice commands to control hardware via an ESP32 microcontroller. 
+This project demonstrates a user interface for converting speech to text and saving the resulting text to a database. The system uses voice commands to control hardware via an ESP32 microcontroller.
 
 ## Tasks Completed
 
@@ -16,25 +16,28 @@ The speech-to-text data is processed by a PHP script that inserts the converted 
 
 ## How It Works
 
-1. **User Interface**: 
-   - Users interact with the web interface to start and stop voice recording.
-   - The recorded voice is converted to text and sent to the server.
+### User Interface:
 
-2. **Server-Side Processing**:
-   - The PHP script receives the text data from the web interface.
-   - The script determines whether the text contains commands like "open" or "close".
-   - It then inserts the command into the database.
+- Users interact with the web interface to start and stop voice recording.
+- The recorded voice is converted to text and sent to the server.
 
-3. **Database Storage**:
-   - The command (`1` for "open" and `0` for "close") is stored in a MySQL database table named `speech_to_text_data`.
+### Server-Side Processing:
+
+- The PHP script receives the text data from the web interface.
+- The script determines whether the text contains commands like "open" or "close".
+- It then inserts the command into the database.
+
+### Database Storage:
+
+- The command (1 for "open" and 0 for "close") is stored in a MySQL database table named `speech_to_text_data`.
 
 ## Code and Configuration
 
 ### Web Interface (HTML + JavaScript)
 
-The web interface records voice input and sends it to the server using JavaScript. 
+The web interface records voice input and sends it to the server using JavaScript.
 
-### PHP Script (`speech_to_text.php`)
+### PHP Script (speech_to_text.php)
 
 This script processes the incoming text, determines the command, and saves it to the database.
 
@@ -44,15 +47,18 @@ Ensure your database is set up with a table named `speech_to_text_data` to store
 
 ## Example Usage
 
-- **Voice Command "open"**: Converts to text, processed, and stored as `1` in the database.
-- **Voice Command "close"**: Converts to text, processed, and stored as `0` in the database.
+- **Voice Command "open"**: Converts to text, processed, and stored as 1 in the database.
+- **Voice Command "close"**: Converts to text, processed, and stored as 0 in the database.
+
 ## Project Demo
 
-To see the project in action, watch the demo video linked below:
+To see the project in action, watch the demo videos linked below:
 
-- **[Project Demo](https://github.com/shathalshehri/Speech_to_Text/blob/main/ezgif.com-video-to-mp4-converter.mp4)**
+- [Voice Command "open" Demo](https://github.com/shathalshehri/Speech_to_Text/blob/main/Task2Week3p2-ezgif.com-video-to-mp4-converter.mp4)
+- [Voice Command "close" Demo](https://github.com/shathalshehri/Speech_to_Text/blob/main/Task2Week3p2-ezgif.com-video-to-mp4-converter.mp4)
 
 ## Troubleshooting
 
 - **Database Connection Issues**: Check database credentials and connection settings.
 - **Text Conversion Issues**: Ensure the speech-to-text interface is correctly recording and sending data.
+
