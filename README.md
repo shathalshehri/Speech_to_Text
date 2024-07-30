@@ -52,10 +52,13 @@ Ensure your database is set up with a table named `speech_to_text_data` to store
 
 ## Project Demo
 
-To see the project in action, watch the demo GIFs linked below:
+To see the project in action, view the demo GIFs below:
 
-- [Voice Command "open" Demo](https://github.com/shathalshehri/Speech_to_Text/blob/main/open.gif)
-- [Voice Command "close" Demo](https://github.com/shathalshehri/Speech_to_Text/blob/main/close.gif)
+- **Voice Command "open"**:
+  ![Voice Command "open" Demo](https://github.com/shathalshehri/Speech_to_Text/blob/main/open.gif)
+
+- **Voice Command "close"**:
+  ![Voice Command "close" Demo](https://github.com/shathalshehri/Speech_to_Text/blob/main/close.gif)
 
 ## Troubleshooting
 
