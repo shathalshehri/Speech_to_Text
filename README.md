@@ -52,10 +52,10 @@ Ensure your database is set up with a table named `speech_to_text_data` to store
 
 ## Project Demo
 
-To see the project in action, watch the demo videos linked below:
+To see the project in action, watch the demo GIFs linked below:
 
-- [Voice Command "open" Demo](https://github.com/shathalshehri/Speech_to_Text/blob/main/Task2Week3p2-ezgif.com-video-to-mp4-converter.mp4)
-- [Voice Command "close" Demo](https://github.com/shathalshehri/Speech_to_Text/blob/main/Task2Week3p2-ezgif.com-video-to-mp4-converter.mp4)
+- [Voice Command "open" Demo](https://github.com/shathalshehri/Speech_to_Text/blob/main/open.gif)
+- [Voice Command "close" Demo](https://github.com/shathalshehri/Speech_to_Text/blob/main/close.gif)
 
 ## Troubleshooting
 
