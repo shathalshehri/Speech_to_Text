@@ -67,5 +67,5 @@ View the project in action with the following demo GIFs:
 - **Database Connection Issues**: Verify database credentials and connection settings.
 - **Text Conversion Issues**: Ensure the speech-to-text interface is functioning correctly and transmitting data accurately.
 
-This README provides a clear and detailed overview of the project while maintaining a professional tone.
+
 
