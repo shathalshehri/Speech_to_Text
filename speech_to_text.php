@@ -1,18 +1,18 @@
 <?php
-// Enable error reporting for debugging
+// Enable error reporting for debugging purposes
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Required variables to connect with the local database
-$servername = "localhost";
-$username = "root";
-$password = "rootroot";
-$db = "Robot";
+// Database connection parameters
+$servername = "localhost"; // Your database server name
+$username = "username";    // Your database username
+$password = "password";    // Your database password
+$db = "database_name";     // Your database name
 
-// Create connection
+// Create a connection to the database
 $conn = new mysqli($servername, $username, $password, $db);
 
-// Check connection
+// Check the database connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
@@ -20,12 +20,13 @@ if ($conn->connect_error) {
 // Initialize response variables
 $command = "Unknown";
 
-// Handle POST request
+// Handle POST requests
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['transcript'])) {
+        // Sanitize the input
         $transcript = mysqli_real_escape_string($conn, $_POST['transcript']);
 
-        // Determine command based on transcript
+        // Determine the command based on the transcript
         if (strpos(strtolower($transcript), 'open') !== false) {
             $command = '1';
         } elseif (strpos(strtolower($transcript), 'close') !== false) {
@@ -34,16 +35,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $command = 'Unknown';
         }
 
-        // Insert command into database if valid
+        // Insert the command into the database if valid
         if ($command !== 'Unknown') {
             $stmt = $conn->prepare("INSERT INTO speech_to_text_data (transcript, command) VALUES (?, ?)");
             $stmt->bind_param("ss", $transcript, $command);
 
             if ($stmt->execute()) {
-                // Success message
                 echo "Record inserted successfully. Command: $command<br>";
             } else {
-                // Error message
                 echo "Error: " . $stmt->error . "<br>";
             }
 
@@ -54,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// Fetch and display the latest command
+// Fetch and display the latest command from the database
 $result = $conn->query("SELECT command FROM speech_to_text_data ORDER BY id DESC LIMIT 1");
 if ($result && $row = $result->fetch_assoc()) {
     $latestCommand = $row['command'];
@@ -62,7 +61,7 @@ if ($result && $row = $result->fetch_assoc()) {
     $latestCommand = "No command found.";
 }
 
-// Close the connection
+// Close the database connection
 $conn->close();
 ?>
 
@@ -84,3 +83,4 @@ $conn->close();
 
 </body>
 </html>
+
